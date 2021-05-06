@@ -23,7 +23,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	while (*s != 0)
 	{
-		str[i] = f(1, *s);
+		str[i] = f(i, *s);
 		i++;
 		s++;
 	}
