@@ -17,12 +17,13 @@ void	*ft_memchr(const void *str, int c, size_t n)
 	const char	*s;
 
 	s = str;
-	while (n != 0)
+	if (c > 255)
+		c %= 256;
+	while (n-- != 0)
 	{
 		if (*s == c)
 			return ((void *)(s));
 		s++;
-		n--;
 	}
 	return (NULL);
 }

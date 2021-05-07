@@ -70,6 +70,8 @@ char	*ft_strtrim(const char *s1, char const *set)
 	char	*str;
 	size_t	len;
 
+	if (!s1)
+		return ((char *)s1);
 	len = ft_lcut(s1, set) - ft_fcut(s1, set) + 1;
 	str = ft_substr(ft_fcut(s1, set), 0, len);
 	return (str);

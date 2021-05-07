@@ -15,27 +15,19 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*sub;
-	unsigned int	i;
+	int				i;
+	unsigned int	l;
 
 	i = 0;
-	if (start < ft_strlen(s))
+	l = ft_strlen(s);
+	sub = malloc(sizeof(*sub) * len + 1);
+	if (sub == NULL)
+		return (NULL);
+	while (s[start] && len > 0 && start < l)
 	{
-		while (start-- > 0)
-			s++;
-		if (len < ft_strlen(s))
-			sub = malloc(sizeof(*sub) * len + 1);
-		else
-			sub = malloc(sizeof(*sub) * ft_strlen(s) + 1);
-		if (sub == NULL)
-			return (NULL);
-		while (len != 0)
-		{
-			len--;
-			sub[i] = s[i];
-			i++;
-		}
-		sub[i] = '\0';
-		return (sub);
+		sub[i++] = s[start++];
+		len--;
 	}
-	return ("");
+	sub[i] = '\0';
+	return (sub);
 }
