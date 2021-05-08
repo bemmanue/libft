@@ -20,9 +20,9 @@ t_list	*ft_lstnew(void *content)
 	if (new == NULL)
 		return (NULL);
 	if (content != NULL)
-		new->content = NULL;
-	else
 		new->content = content;
+	else
+		new->content = NULL;
 	new->next = NULL;
 	return (new);
 }
