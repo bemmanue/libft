@@ -89,6 +89,8 @@ char	**ft_split(char const *s, char c)
 	int		i;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	mass = malloc(sizeof(*mass) * (ft_word(s, c) + 1));
 	if (mass == NULL)
 		return (NULL);
