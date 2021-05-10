@@ -28,7 +28,7 @@ static char	*ft_memandcopy(char *str, int ch, char const *s)
 {
 	char	*buf;
 
-	str = malloc(sizeof(str) * ch + 1);
+	str = malloc(sizeof(*str) * ch + 1);
 	if (str == NULL)
 		return (NULL);
 	buf = str;
@@ -91,7 +91,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	if (!s)
 		return (NULL);
-	mass = malloc(sizeof(*mass) * (ft_word(s, c) + 1));
+	mass = malloc(sizeof(*mass) * ft_word(s, c) + 1);
 	if (mass == NULL)
 		return (NULL);
 	while (i < ft_word(s, c))
