@@ -6,7 +6,7 @@
 /*   By: bemmanue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 15:53:30 by bemmanue          #+#    #+#             */
-/*   Updated: 2021/04/22 19:00:33 by bemmanue         ###   ########.fr       */
+/*   Updated: 2021/06/07 19:57:29 by bemmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,10 @@ void	*ft_memset(void *b, int c, size_t len)
 	unsigned char	*buf;
 
 	buf = b;
-	if (len != 0)
+	while (len != 0)
 	{
-		while (len != 0)
-		{
-			*buf++ = c;
-			len--;
-		}
+		*buf++ = c;
+		len--;
 	}
 	return (b);
 }
