@@ -18,8 +18,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	temp = *lst;
 	if (!lst || !new)
-	{
-	}
+		;
 	else if (!*lst)
 		*lst = new;
 	else
